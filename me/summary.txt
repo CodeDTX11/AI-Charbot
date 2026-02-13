@@ -1,0 +1,5 @@
+My name is Dylan Messerly, and I am a graduate of Texas State University, where I earned a Bachelor of Science in Computer Science with a minor in Mathematics, graduating summa cum laude.
+
+I'm currently a Software Developer at Eupraxia Labs, where I co-architected the Federal Frontier Platform—a GitOps-driven Kubernetes management system designed for secure, multi-account AWS and hybrid cloud environments. My day-to-day work involves building core Go backend services that power cluster creation, mutation, and teardown, along with multi-repo GitLab orchestration and atomic commit workflows. I've implemented OIDC provider automation, IRSA role provisioning, and dynamic Helm values templating to streamline DevOps operations across the platform.
+
+One area I'm particularly excited about is the intersection of AI and infrastructure automation. I've built MCP servers and Python-based agents that enable AI-driven automation of Kubernetes operations and GitOps workflows, pushing the boundaries of what's possible with intelligent platform orchestration.
