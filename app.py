@@ -76,7 +76,15 @@ tools = [{"type": "function", "function": record_user_details_json},
 class Me:
 
     def __init__(self):
-        self.openai = OpenAI(base_url=os.getenv('GEMINI_BASE_URL'), api_key=os.getenv('GOOGLE_API_KEY'))
+        base_url = os.getenv("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
+        if not base_url.startswith(("http://", "https://")):
+            raise ValueError(f"Invalid GEMINI_BASE_URL: {base_url!r}")
+
+        self.openai = OpenAI(
+            base_url=base_url,
+            api_key=os.getenv("GOOGLE_API_KEY"),
+        )
+        # self.openai = OpenAI(base_url=os.getenv('GEMINI_BASE_URL'), api_key=os.getenv('GOOGLE_API_KEY'))
         self.name = "Dylan Messerly"
         reader = PdfReader("me/linkedin.pdf")
         self.linkedin = ""
@@ -129,5 +137,11 @@ If the user is engaging in discussion, try to steer them towards getting in touc
 
 
 if __name__ == "__main__":
+
+    theme = gr.themes.Soft(
+        primary_hue="blue",
+        neutral_hue="blue",   # less stark than bright white/gray
+    )
+
     me = Me()
-    gr.ChatInterface(me.chat).launch()
+    gr.ChatInterface(me.chat).launch(theme=theme)
