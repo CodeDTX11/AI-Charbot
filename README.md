@@ -1,4 +1,4 @@
-# AI Charbot
+# AI Chatbot
 
 A personal AI chatbot that represents me, Dylan Messerly, on my website. It answers questions about my career, background, and experience — and uses tool calling to capture leads and log unanswered questions via Pushover notifications.
 
